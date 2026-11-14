@@ -1,0 +1,44 @@
+{
+  "name": "dsh-export-viewer",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Export the current conversation (with subagents) as a self-contained HTML viewer page.",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "export",
+    "session",
+    "html"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "viewer-model.js",
+    "assets",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "license": "MIT"
+}

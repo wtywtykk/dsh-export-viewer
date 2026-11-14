@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Conversation HTML export",
+    "description": "Adds a Session-header action that downloads the current conversation and its subagents as one self-contained HTML page."
+  }
+}

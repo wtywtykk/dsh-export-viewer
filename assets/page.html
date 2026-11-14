@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DSH 会话查看器 · 对话 Dump 可视化</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-ds-dark-theme>
+<div id="app" class="app-frame">
+
+  <!-- ============ Sidebar ============ -->
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark" title="DeepSeek Harness">DSH</div>
+      <div class="brand-text">
+        <div class="brand-name">DeepSeek Harness</div>
+        <div class="brand-sub">会话查看器</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section-label" id="session-section-label">会话</div>
+    <div id="session-list" class="session-list"></div>
+
+    <div class="sidebar-spacer"></div>
+
+    <div class="sidebar-footer">
+      <div class="footer-row">
+        <span id="sidebar-model" class="model-chip"></span>
+      </div>
+      <button id="theme-toggle" class="footer-btn" title="切换明暗主题">
+        <svg viewBox="0 0 24 24" class="nav-ico"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
+        <span>外观</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ============ Main column ============ -->
+  <main class="main">
+    <header class="conversation-header">
+      <div class="conv-head-left">
+        <div class="conv-title-wrap">
+          <button id="back-main" class="back-btn hidden" title="返回主会话">← 主会话</button>
+          <h1 id="conv-title" class="conv-title"></h1>
+          <span id="conv-status" class="status-badge"></span>
+        </div>
+        <div id="conv-subtitle" class="conv-subtitle"></div>
+      </div>
+      <div class="conv-head-right">
+        <button id="process-toggle" class="head-btn" title="展开 / 折叠所有轮次的工作过程">
+          <svg viewBox="0 0 24 24" class="nav-ico"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+          <span id="process-toggle-label">展开过程</span>
+        </button>
+        <div class="view-tabs">
+          <button class="view-tab active" data-view="chat">对话</button>
+          <button class="view-tab" data-view="trajectory">轨迹</button>
+          <button class="view-tab" data-view="overview">总览</button>
+        </div>
+      </div>
+    </header>
+
+    <section id="view-chat" class="view view-chat">
+      <div id="chat-scroll" class="chat-scroll">
+        <div id="chat-stream" class="chat-stream"></div>
+      </div>
+      <nav id="turn-rail" class="turn-rail hidden" aria-label="轮次快速跳转">
+        <div class="turn-rail-scroller">
+          <div id="turn-rail-marks" class="turn-rail-marks"></div>
+        </div>
+        <div id="turn-rail-preview" class="turn-rail-preview hidden" role="tooltip"></div>
+      </nav>
+    </section>
+
+    <section id="view-trajectory" class="view view-trajectory hidden">
+      <div class="traj-toolbar">
+        <div class="traj-search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input id="traj-search-input" type="text" placeholder="搜索事件类型、内容…" />
+        </div>
+        <div id="traj-filters" class="traj-filters">
+          <button class="filter-chip active" data-filter="all">全部</button>
+          <button class="filter-chip" data-filter="user">用户</button>
+          <button class="filter-chip" data-filter="assistant">助手</button>
+          <button class="filter-chip" data-filter="tool">工具</button>
+          <button class="filter-chip" data-filter="system">系统</button>
+          <button class="filter-chip" data-filter="error">错误</button>
+        </div>
+        <span id="traj-count" class="traj-count"></span>
+      </div>
+      <div id="traj-overview" class="traj-overview"></div>
+      <div id="traj-ledger-wrap" class="traj-ledger-wrap">
+        <div id="traj-ledger" class="traj-ledger"></div>
+      </div>
+    </section>
+
+    <section id="view-overview" class="view view-overview hidden">
+      <div id="overview-root" class="overview-root"></div>
+    </section>
+  </main>
+
+  <!-- ============ Details / inspector ============ -->
+  <aside id="details" class="details hidden">
+    <div class="details-header">
+      <span>事件详情</span>
+      <button id="details-close" class="icon-btn" title="关闭">
+        <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div id="details-body" class="details-body"></div>
+  </aside>
+
+</div>
+
+<script src="data.js"></script>
+<script src="markdown.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
