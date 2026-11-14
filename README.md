@@ -1,4 +1,4 @@
-# dsh-export-viewer
+# @wtywtykk/dsh-export-viewer
 
 在 DSH Web 界面的会话标题栏加一个按钮：把**当前对话**（含全部子代理会话）导出成一个
 **单文件 HTML**，双击即可打开，不需要服务器或任何外部资源。
@@ -47,7 +47,7 @@ dsh-export-viewer/
 
 ## 安装
 
-通过 DSH 的插件管理器安装本 bundle（bundle 名 `dsh-export-viewer`）。
+通过 DSH 的插件管理器安装本 bundle（bundle 名 `@wtywtykk/dsh-export-viewer`）。
 本地开发时，直接把本目录作为 bundle 加入目标 profile 即可。
 
 要求 DSH 0.2.x；会话格式 v0–v4 均可导出。

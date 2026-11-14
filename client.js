@@ -1,11 +1,11 @@
-// dsh-export-viewer — Client half.
+// @wtywtykk/dsh-export-viewer — Client half.
 //
 // Adds one compact Session-header utility that downloads the current Session
 // (and its subagents) as a single self-contained HTML page. The page itself is
 // produced by the Host route `/api/session.viewer`; all of its templates live
 // inside this package.
 window.__ModuleLoader__.load({
-  id: 'dsh-export-viewer',
+  id: '@wtywtykk/dsh-export-viewer',
   factory(require) {
     const React = require('react');
     const h = React.createElement;

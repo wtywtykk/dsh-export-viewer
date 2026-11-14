@@ -1,5 +1,5 @@
 {
-  "name": "dsh-export-viewer",
+  "name": "@wtywtykk/dsh-export-viewer",
   "version": "0.1.0",
   "type": "module",
   "description": "Export the current conversation (with subagents) as a self-contained HTML viewer page.",
@@ -39,6 +39,9 @@
         "@deepseek-ai/dsh-client-ui-conversation"
       ]
     }
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "license": "MIT"
 }

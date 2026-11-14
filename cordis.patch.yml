@@ -1,7 +1,7 @@
-# dsh-export-viewer：向 host 插件名册插入本插件的行。
+# @wtywtykk/dsh-export-viewer：向 host 插件名册插入本插件的行。
 # 本文件是该包的 dsh.bundle.patch 层：安装到 profile 后会被追加进
 # dsh.profile.bundles，并在启动时作为 patch 层应用。name 指向本包
 # （host + client 两半都由它加载），id 是 Loader 行名。
 - insert:
     - id: export-viewer
-      name: 'dsh-export-viewer'
+      name: '@wtywtykk/dsh-export-viewer'

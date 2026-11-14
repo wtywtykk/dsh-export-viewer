@@ -1,4 +1,4 @@
-// dsh-export-viewer — Host half.
+// @wtywtykk/dsh-export-viewer — Host half.
 //
 // Serves one document-relative download route that turns the selected Session
 // (plus all of its subagent descendants) into a single self-contained HTML
@@ -165,7 +165,7 @@ async function viewerResponse(ctx, request) {
  */
 export function apply(ctx) {
   const connection = Reflect.get(ctx, 'connection');
-  if (connection === undefined) throw new Error('dsh-export-viewer requires the connection service');
+  if (connection === undefined) throw new Error('@wtywtykk/dsh-export-viewer requires the connection service');
   connection.fetch.register({
     path: SESSION_VIEWER_PATH,
     methods: ['GET', 'HEAD'],
